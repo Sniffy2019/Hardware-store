@@ -1,5 +1,6 @@
 import os
 from Hardware import app
+with app.app_context():
 
 
 if __name__ == "__main__":
