@@ -1,7 +1,7 @@
 from Hardware import db
 
 
-class Category(db.table):
+class Category(db.Model):
     # schema for the Category model
     id = db.Column(db.Integer, primary_key=True)
     category_name = db.Column(db.String(25), unique=True, nullable=False)
@@ -12,7 +12,7 @@ class Category(db.table):
         return self.category_name
 
 
-class Task(db.table):
+class Task(db.Model):
     # schema for the Task model
     id = db.Column(db.Integer, primary_key=True)
     Hardware_name = db.Column(db.String(50), unique=True, nullable=False)
