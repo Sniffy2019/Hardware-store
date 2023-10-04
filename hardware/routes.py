@@ -5,13 +5,13 @@ from hardware.table import Category, Task
 
 @app.route("/")
 def home():
-    return render_template("shop.html")
+    return render_template("tasks.html")
 
 
 @app.route("/categories")
 def categories():
-    return render_template("categories.html")
-
+    categories = list(Category.query.order_by(Category.category_name).all())
+    return render_template("categories.html", categories=categories)
 
 
 @app.route("/add_category", methods=["GET", "POST"])
