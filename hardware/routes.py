@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template
-from Hardware import app, db
-from Hardware.table import Category, Task
+from hardware import app, db
+from hardware.table import Category, Task
 
 
 @app.route("/")
