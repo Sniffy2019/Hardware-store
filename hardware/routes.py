@@ -5,7 +5,7 @@ from hardware.table import Category, Task
 
 @app.route("/")
 def home():
-    return render_template("tasks.html")
+    return render_template("table.html")
 
 
 @app.route("/categories")
