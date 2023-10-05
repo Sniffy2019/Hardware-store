@@ -11,7 +11,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 
 db = SQLAlchemy(app)
 
-from taskmanager import routes  # noqa
+from hardware import routes  # noqa
 
 with app.app_context():
     db.create_all()
