@@ -2,8 +2,16 @@ blinker==1.6.2
 click==8.1.7
 Flask==3.0.0
 Flask-SQLAlchemy==3.1.1
+gevent==23.9.1
 greenlet==3.0.0
+heroku==0.1.4
 itsdangerous==2.1.2
+mysql-connector-python==8.1.0
+protobuf==4.21.12
+psycopg2==2.9.8
 pyscopg2==66.0.2
+python-dateutil==1.5
 SQLAlchemy==2.0.21
 Werkzeug==3.0.0
+zope.event==5.0
+zope.interface==6.1
