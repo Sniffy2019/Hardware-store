@@ -1,4 +1,4 @@
-from hardware import db
+from taskmanager import db
 
 
 class Category(db.Model):

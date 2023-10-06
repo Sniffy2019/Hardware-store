@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
-from hardware import app, db
-from hardware.table import Category, Task
+from taskmanager import app, db
+from taskmanager.table import Category, Task
 
 
 @app.route("/")
