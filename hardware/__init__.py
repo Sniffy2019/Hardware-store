@@ -21,4 +21,4 @@ db = SQLAlchemy(app)
 
 app.app_context().push()
 
-from taskmanager import routes  # noqa
+from hardware import routes  # noqa

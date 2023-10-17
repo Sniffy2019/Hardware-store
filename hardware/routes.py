@@ -1,12 +1,12 @@
 from flask import render_template, request, redirect, url_for
-from taskmanager import app, db
-from taskmanager.table import Category, Task
+from hardware import app, db
+from hardware.table import Category, Task
 
 
 @app.route("/")
 def home():
     tasks = list(Task.query.order_by(Task.id).all())
-    return render_template("task.html", tasks=tasks)
+    return render_template("shop.html", tasks=tasks)
 
 
 @app.route("/categories")
@@ -43,13 +43,13 @@ def delete_category(category_id):
     return redirect(url_for("categories"))
 
 
-@app.route("/add_task", methods=["GET", "POST"])
-def add_task():
+@app.route("/add_item", methods=["GET", "POST"])
+def add_item():
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
         task = Task(
-            task_name=request.form.get("task_name"),
-            task_description=request.form.get("task_description"),
+            task_name=request.form.get("item_name"),
+            task_description=request.form.get("item_description"),
             is_urgent=bool(True if request.form.get("is_urgent") else False),
             due_date=request.form.get("due_date"),
             category_id=request.form.get("category_id")
@@ -57,11 +57,11 @@ def add_task():
         db.session.add(task)
         db.session.commit()
         return redirect(url_for("home"))
-    return render_template("add_task.html", categories=categories)
+    return render_template("add_item.html", categories=categories)
 
 
-@app.route("/edit_task/<int:task_id>", methods=["GET", "POST"])
-def edit_task(task_id):
+@app.route("/edit_item/<int:task_id>", methods=["GET", "POST"])
+def edit_item(task_id):
     task = Task.query.get_or_404(task_id)
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
@@ -74,8 +74,8 @@ def edit_task(task_id):
     return render_template("edit_task.html", task=task, categories=categories)
 
 
-@app.route("/delete_task/<int:task_id>")
-def delete_task(task_id):
+@app.route("/delete_item/<int:task_id>")
+def delete_item(task_id):
     task = Task.query.get_or_404(task_id)
     db.session.delete(task)
     db.session.commit()
