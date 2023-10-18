@@ -47,7 +47,7 @@ def delete_category(category_id):
 def add_item():
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
-        Item = item(
+        item = Item(
             item_name=request.form.get("item_name"),
             item_description=request.form.get("item_description"),
             is_urgent=bool(True if request.form.get("is_urgent") else False),
@@ -65,8 +65,8 @@ def edit_item(item_id):
     item = item.query.get_or_404(task_id)
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
-        item.item_name = request.form.get("item_name")
-        item.item_description = request.form.get("item_description")
+        item.Item_name = request.form.get("item_name")
+        item.Item_description = request.form.get("item_description")
         item.is_urgent = bool(True if request.form.get("is_urgent") else False)
         item.due_date = request.form.get("due_date")
         item.category_id = request.form.get("category_id")
