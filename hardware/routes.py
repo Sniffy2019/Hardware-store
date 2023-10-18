@@ -1,11 +1,11 @@
 from flask import render_template, request, redirect, url_for
 from hardware import app, db
-from hardware.table import Category, Task
+from hardware.table import Category, Item
 
 
 @app.route("/")
 def home():
-    tasks = list(Task.query.order_by(Task.id).all())
+    items = list(Item.query.order_by(Item.id).all())
     return render_template("shop.html", tasks=tasks)
 
 
@@ -47,9 +47,9 @@ def delete_category(category_id):
 def add_item():
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
-        task = Task(
-            task_name=request.form.get("item_name"),
-            task_description=request.form.get("item_description"),
+        item = Item(
+            item_name=request.form.get("item_name"),
+            item_description=request.form.get("item_description"),
             is_urgent=bool(True if request.form.get("is_urgent") else False),
             due_date=request.form.get("due_date"),
             category_id=request.form.get("category_id")
@@ -62,21 +62,21 @@ def add_item():
 
 @app.route("/edit_item/<int:task_id>", methods=["GET", "POST"])
 def edit_item(task_id):
-    task = Task.query.get_or_404(task_id)
+    item = item.query.get_or_404(task_id)
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
-        task.task_name = request.form.get("task_name")
-        task.task_description = request.form.get("task_description")
-        task.is_urgent = bool(True if request.form.get("is_urgent") else False)
-        task.due_date = request.form.get("due_date")
-        task.category_id = request.form.get("category_id")
+        item.item_name = request.form.get("task_name")
+        item.item_description = request.form.get("task_description")
+        item.is_urgent = bool(True if request.form.get("is_urgent") else False)
+        item.due_date = request.form.get("due_date")
+        item.category_id = request.form.get("category_id")
         db.session.commit()
-    return render_template("edit_task.html", task=task, categories=categories)
+    return render_template("edit_item.html", item=item, categories=categories)
 
 
 @app.route("/delete_item/<int:task_id>")
 def delete_item(task_id):
-    task = Task.query.get_or_404(task_id)
-    db.session.delete(task)
+    item = Item.query.get_or_404(item_id)
+    db.session.delete(item)
     db.session.commit()
     return redirect(url_for("home"))
