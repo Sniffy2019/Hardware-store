@@ -62,11 +62,11 @@ def add_item():
 
 @app.route("/edit_item/<int:task_id>", methods=["GET", "POST"])
 def edit_item(item_id):
-    item = item.query.get_or_404(task_id)
+    item = Item.query.get_or_404(item_id)
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
-        item.Item_name = request.form.get("item_name")
-        item.Item_description = request.form.get("item_description")
+        item.item_name = request.form.get("item_name")
+        item.item_description = request.form.get("item_description")
         item.is_urgent = bool(True if request.form.get("is_urgent") else False)
         item.due_date = request.form.get("due_date")
         item.category_id = request.form.get("category_id")
@@ -74,7 +74,7 @@ def edit_item(item_id):
     return render_template("edit_item.html", item=item, categories=categories)
 
 
-@app.route("/delete_item/<int:task_id>")
+@app.route("/delete_item/<int:item_id>")
 def delete_item(task_id):
     item = Item.query.get_or_404(item_id)
     db.session.delete(item)
