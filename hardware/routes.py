@@ -6,7 +6,7 @@ from hardware.table import Category, Item
 @app.route("/")
 def home():
     items = list(Item.query.order_by(Item.id).all())
-    return render_template("shop.html", tasks=tasks)
+    return render_template("shop.html", item=items)
 
 
 @app.route("/categories")
@@ -54,19 +54,19 @@ def add_item():
             due_date=request.form.get("due_date"),
             category_id=request.form.get("category_id")
         )
-        db.session.add(task)
+        db.session.add(item)
         db.session.commit()
         return redirect(url_for("home"))
     return render_template("add_item.html", categories=categories)
 
 
 @app.route("/edit_item/<int:task_id>", methods=["GET", "POST"])
-def edit_item(task_id):
+def edit_item(item_id):
     item = item.query.get_or_404(task_id)
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
-        item.item_name = request.form.get("task_name")
-        item.item_description = request.form.get("task_description")
+        item.item_name = request.form.get("item_name")
+        item.item_description = request.form.get("item_description")
         item.is_urgent = bool(True if request.form.get("is_urgent") else False)
         item.due_date = request.form.get("due_date")
         item.category_id = request.form.get("category_id")
