@@ -13,7 +13,7 @@ class Category(db.Model):
 
 
 class Item(db.Model):
-    # schema for the Task model
+    # schema for the Item model
     id = db.Column(db.Integer, primary_key=True)
     item_name = db.Column(db.String(50), unique=True, nullable=False)
     item_description = db.Column(db.Text, nullable=False)
