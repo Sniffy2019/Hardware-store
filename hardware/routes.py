@@ -60,7 +60,7 @@ def add_item():
     return render_template("add_item.html", categories=categories)
 
 
-@app.route("/edit_item/<int:task_id>", methods=["GET", "POST"])
+@app.route("/edit_item/<int:item_id>", methods=["GET", "POST"])
 def edit_item(item_id):
     item = Item.query.get_or_404(item_id)
     categories = list(Category.query.order_by(Category.category_name).all())
