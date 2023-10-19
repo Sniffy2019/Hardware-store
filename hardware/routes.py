@@ -75,7 +75,7 @@ def edit_item(item_id):
 
 
 @app.route("/delete_item/<int:item_id>")
-def delete_item(task_id):
+def delete_item(item_id):
     item = Item.query.get_or_404(item_id)
     db.session.delete(item)
     db.session.commit()
