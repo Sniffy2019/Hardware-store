@@ -21,7 +21,8 @@
         <!-- top navbar -->
         <nav class="yellow darken-1 ">
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo black-text">Hardware Store</a>
+                <a href="{{ url_for('home') }}" class="brand-logo black-text"> <img class="img" src="https://live.staticflickr.com/65535/52717604620_10034f952a_n.jpg" alt="venezulan flag"
+                    width="150" height="65" />
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}" class=" black-text">Home</a></li>
@@ -40,15 +41,18 @@
     </header>
 
     <main class="container, background1">
+        
         {% block content %}
         {% endblock %}
     </main>
 
     <footer class="page-footer blue darken-3">
+        
         <div class="footer-copyright">
             <div class="container">
-                For demonstration purposes only
-                <a class="white-text right" href="https://AcerosGuayana.ve" target="_blank">&copy; Aceros Guayana</a>
+                <img class="img" src="https://live.staticflickr.com/65535/52717173986_16b2f21b03_n.jpg" width="200" ,
+        height="100" />
+                <a class="white-text center-align" href="https://AcerosGuayana.ve" target="_blank">&copy; Aceros Guayana</a>
             </div>
         </div>
     </footer>
