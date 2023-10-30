@@ -31,11 +31,7 @@
   
 * ### [Testing](#Test)
 
- * [Automated Testing](#Jest)
  * [W3 Nu HTML Validator](#w3-NU-HTML)
- * [W3C CSS Validation Service](#W3C-CSS)
- * [Stripe](#Stripe)
- * [Lighthouse](#Lighthouse)
  * [Manual Testing](#Man-Test)
  * [Bugs](#Bugs)
  * [Development of website](#Development)
