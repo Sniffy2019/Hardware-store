@@ -1,15 +1,16 @@
 from hardware import db
 
 
-class Category(db.Model):
-    # schema for the Category model
+class Product(db.Model):
+    # schema for the Product model
     id = db.Column(db.Integer, primary_key=True)
-    category_name = db.Column(db.String(25), unique=True, nullable=False)
-    items = db.relationship("Item", backref="category", cascade="all, delete", lazy=True)
+    product_name = db.Column(db.String(25), unique=True, nullable=False)
+    items = db.relationship("Item", backref="product",
+                            cascade="all, delete", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
-        return self.category_name
+        return self.product_name
 
 
 class Item(db.Model):
@@ -19,7 +20,8 @@ class Item(db.Model):
     item_description = db.Column(db.Text, nullable=False)
     is_urgent = db.Column(db.Boolean, default=False, nullable=False)
     due_date = db.Column(db.Date, nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey("category.id", ondelete="CASCADE"), nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey(
+        "product.id", ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
