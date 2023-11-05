@@ -84,7 +84,7 @@ The design is based on the 'code institute' task manager backend developement le
 <a name="Font"></a>
 ### Font styles used
 
-TBC
+The font style is from materialize, this can be changed by adding "flow-text" to make it fit the sceen as suits.
 
 
 <a name="Colour"></a>
@@ -184,17 +184,16 @@ Using Html, CSS and Python
   
 <a name="w3-NU-HTML"></a>
 * W3C was used to eliminate any glaring errors and conflicts on the web pages.
-* Main index.html, assets/html NU HTML checker
-[HTML Link](https://live.staticflickr.com/65535/53023596177_6a3bcd1ef2_z.jpg)
-[HTML Link 1](https://live.staticflickr.com/65535/53024659358_602b0ef0a9_c.jpg)
-[HTML link 2](https://live.staticflickr.com/65535/53024372984_d4bb32bfe6_z.jpg)
-[HTML link 3](https://live.staticflickr.com/65535/53036416374_c370055684_b.jpg)
+The WC3 did not like the use of any lines of code such as e.g. <script src="{{ url_for('static', filename='js/script.js') }}"></script>.
+The use of curly braces kept thowing errors.
+This is a python back end excercise so i've left the HTML pages as they were to link with the python pages.
 
 
 
 <a name="Man-Test"></a>
 ### Manual Testing
 
+If loading first time this may need to be used before acessing the web page.
 
 For the database creation other than the table.py page.
 first iniate psql on the bash commmand line
@@ -216,14 +215,6 @@ for Python
   If I had not loaded this this the psql on the bash script would not activate; this would have killed the table data.
   
 
-
-
-
-
-
-
-
-
 <a name="Bugs"></a>
 ### Glitches/Bugs
 
@@ -232,11 +223,13 @@ The pages and links have been tested, and the buttons react well.
 There has been some errors with the linking software; especially psycopg2 and the table functioning to accept input data.
 Also before I managed to get heroku to work; if you made a double/repeated input on the Add Items page it would crash the site.
 
+When using Gitpod It needs time from the initial load to some of the Flask applictions as mentioned before the psycopg2 module seems very temperamental.
+
 <a name="development"></a>
 ### Development
 
 As this is a backend project showing how to link database input information with a test of a front end image of a website. 
-This can be developed into a fully fuctioning website linking it with a fully interactive payment page and a gallery showing images of the products/categories selected
+This can be developed into a fully fuctioning website linking it with a fully interactive payment page and a gallery showing images of the products/categories selected.
 
 <a name="Auth"></a>
 ### Authors
