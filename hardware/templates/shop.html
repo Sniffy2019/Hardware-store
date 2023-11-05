@@ -1,36 +1,41 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <h3 class="light-blue-text text-darken-4 center-align">Items</h3>
 
 <div class="row">
-    <div class="col s12 center-align">
-        <a href="{{ url_for('add_item') }}" class="btn-large light-blue darken-2">
-            Add Items <i class="fas fa-plus-square right"></i>
-        </a>
-    </div>
+  <div class="col s12 center-align">
+    <a href="{{ url_for('add_item') }}" class="btn-large light-blue darken-2">
+      Add Items <i class="fas fa-plus-square right"></i>
+    </a>
+  </div>
 </div>
 
 <ul class="collapsible">
-    {% for item in items|sort(attribute="due_date") %}
-    <li>
-        <div class="collapsible-header black-text  darken-4">
-            <i class="fas fa-caret-down"></i>
-            <strong>{{ item.item_name }}</strong> : {{ item.due_date.strftime("%d %B, %Y") }}
-            {% if item.is_urgent == True %}
-            <i class="fas fa-exclamation-circle light-blue-text text-lighten-2"></i>
-            {% endif %}
-        </div>
-        <div class="collapsible-body">
-            <strong>{{ item.product }}</strong>
-            <p>{{ item.item_description }}</p>
-            <p>
-                <a href="{{ url_for('edit_item', item_id=item.id) }}" class="btn green accent-4">Edit</a>
-                <a href="{{ url_for('delete_item', item_id=item.id) }}" class="btn red">Delete</a>
-            </p>
-        </div>
-    </li>
-    {% endfor %}
+  {% for item in items|sort(attribute="due_date") %}
+  <li>
+    <div class="collapsible-header black-text darken-4">
+      <i class="fas fa-caret-down"></i>
+      <strong>{{ item.item_name }}</strong> : {{ item.due_date.strftime("%d %B,
+      %Y") }} {% if item.is_urgent == True %}
+      <i class="fas fa-exclamation-circle light-blue-text text-lighten-2"></i>
+      {% endif %}
+    </div>
+    <div class="collapsible-body">
+      <strong>{{ item.product }}</strong>
+      <p>{{ item.item_description }}</p>
+      <p>
+        <a
+          href="{{ url_for('edit_item', item_id=item.id) }}"
+          class="btn green accent-4"
+          >Edit</a
+        >
+        <a href="{{ url_for('delete_item', item_id=item.id) }}" class="btn red"
+          >Delete</a
+        >
+      </p>
+    </div>
+  </li>
+  {% endfor %}
 </ul>
 
 {% endblock %}
