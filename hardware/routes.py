@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from hardware import app, db
-from hardware.table import Category, Item
+from hardware.table import Product, Item
 
 
 @app.route("/")
@@ -9,69 +9,69 @@ def home():
     return render_template("shop.html", item=items)
 
 
-@app.route("/categories")
-def categories():
-    categories = list(Category.query.order_by(Category.category_name).all())
-    return render_template("categories.html", categories=categories)
+@app.route("/products")
+def products():
+    products = list(Product.query.order_by(Product.product_name).all())
+    return render_template("products.html", products=products)
 
 
-@app.route("/add_category", methods=["GET", "POST"])
-def add_category():
+@app.route("/add_product", methods=["GET", "POST"])
+def add_product():
     if request.method == "POST":
-        category = Category(category_name=request.form.get("category_name"))
-        db.session.add(category)
+        product = Product(product_name=request.form.get("product_name"))
+        db.session.add(product)
         db.session.commit()
-        return redirect(url_for("categories"))
-    return render_template("add_category.html")
+        return redirect(url_for("products"))
+    return render_template("add_product.html")
 
 
-@app.route("/edit_category/<int:category_id>", methods=["GET", "POST"])
-def edit_category(category_id):
-    category = Category.query.get_or_404(category_id)
+@app.route("/edit_product/<int:product_id>", methods=["GET", "POST"])
+def edit_product(product_id):
+    product = Product.query.get_or_404(product_id)
     if request.method == "POST":
-        category.category_name = request.form.get("category_name")
+        product.product_name = request.form.get("product_name")
         db.session.commit()
-        return redirect(url_for("categories"))
-    return render_template("edit_category.html", category=category)
+        return redirect(url_for("products"))
+    return render_template("edit_product.html", product=product)
 
 
-@app.route("/delete_category/<int:category_id>")
-def delete_category(category_id):
-    category = Category.query.get_or_404(category_id)
-    db.session.delete(category)
+@app.route("/delete_product/<int:product_id>")
+def delete_product(product_id):
+    product = Product.query.get_or_404(product_id)
+    db.session.delete(product)
     db.session.commit()
-    return redirect(url_for("categories"))
+    return redirect(url_for("products"))
 
 
 @app.route("/add_item", methods=["GET", "POST"])
 def add_item():
-    categories = list(Category.query.order_by(Category.category_name).all())
+    products = list(Product.query.order_by(Product.product_name).all())
     if request.method == "POST":
         item = Item(
             item_name=request.form.get("item_name"),
             item_description=request.form.get("item_description"),
             is_urgent=bool(True if request.form.get("is_urgent") else False),
             due_date=request.form.get("due_date"),
-            category_id=request.form.get("category_id")
+            product_id=request.form.get("product_id")
         )
         db.session.add(item)
         db.session.commit()
         return redirect(url_for("home"))
-    return render_template("add_item.html", categories=categories)
+    return render_template("add_item.html", products=products)
 
 
 @app.route("/edit_item/<int:item_id>", methods=["GET", "POST"])
 def edit_item(item_id):
     item = Item.query.get_or_404(item_id)
-    categories = list(Category.query.order_by(Category.category_name).all())
+    products = list(Product.query.order_by(Product.product_name).all())
     if request.method == "POST":
         item.item_name = request.form.get("item_name")
         item.item_description = request.form.get("item_description")
         item.is_urgent = bool(True if request.form.get("is_urgent") else False)
         item.due_date = request.form.get("due_date")
-        item.category_id = request.form.get("category_id")
+        item.product_id = request.form.get("product_id")
         db.session.commit()
-    return render_template("edit_item.html", item=item, categories=categories)
+    return render_template("edit_item.html", item=item, products=products)
 
 
 @app.route("/delete_item/<int:item_id>")
