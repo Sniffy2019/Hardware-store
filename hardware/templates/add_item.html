@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">Add Item</h3>
+<h3 class="light-blue-text text-darken-4 center-align"><strong>Add Item</strong></h3>
 
 <div class="row card-panel, opacity=50% ">
     <form class="col s12" method="POST" action="{{ url_for('add_item') }}">
@@ -12,7 +12,7 @@
                 <input id="item_name" name="item_name" minlength="5" maxlength="50" type="text" textarea="black-text"
                  class="validate"
                     required >
-                <label class="black-text" for="item_name">Item Name</label>
+                <label class="black-text flow-text" for="item_name"><strong>Item Name</strong></label>
             </div>
         </div>
         <!-- item description -->
@@ -21,7 +21,7 @@
                 <i class="fas fa-align-left prefix black-text text-darken-4"></i>
                 <textarea id="item_description" name="item_description" minlength="5" maxlength="200" type="text"
                     class="materialize-textarea validate" required></textarea>
-                <label class="black-text" for="item_description">Item Description</label>
+                <label class="black-text flow-text" for="item_description"><strong>Item Description</strong></label>
             </div>
         </div>
         <!-- due date -->
@@ -29,7 +29,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-calendar-alt prefix green-text text-darken-4"></i>
                 <input id="due_date" name="due_date" type="text" class="datepicker validate" required>
-                <label class="black-text" for="due_date">Due Date</label>
+                <label class="black-text flow-text" for="due_date"><strong>Due Date</strong></label>
             </div>
         </div>
         <!-- is urgent -->
@@ -37,7 +37,7 @@
             <div class="input-field col s12">
                 <div class="switch">
                     <i class="fas fa-exclamation-circle prefix purple-text text-darken-4"></i>
-                    <label class="black-text" for="is_urgent">
+                    <label class="black-text flow-text" for="is_urgent">
                         <input id="is_urgent" name="is_urgent" type="checkbox">
                         <span class="lever"></span>
                         Is Urgent
@@ -55,7 +55,7 @@
                     <option value="{{ category.id }}">{{ category.category_name }}</option>
                     {% endfor %}
                 </select>
-                <label class="black-text" for="category_id">Category</label>
+                <label class="black-text flow-text" for="category_id"><strong>Category</strong></label>
             </div>
         </div>
         <!-- submit button -->
