@@ -187,6 +187,7 @@ Using Html, CSS and Python
 The WC3 did not like the use of any lines of code such as e.g. <script src="{{ url_for('static', filename='js/script.js') }}"></script>.
 The use of curly braces kept thowing errors.
 This is a python back end excercise so i've left the HTML pages as they were to link with the python pages.
+I have put the HTML pages through Glitch to make them prettier for ease of eading the code.
 
 
 
