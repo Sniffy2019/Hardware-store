@@ -153,7 +153,6 @@ Code institute LMS
 * cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css
 * cdn.jsdeliver.net
 * code.jquery.com/jquery-3.6.0.min.js
-* js.stripe.com/v3/
 * live.staticflickr.com
 * cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 * maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
@@ -236,12 +235,8 @@ Also before I managed to get heroku to work; if you made a double/repeated input
 <a name="development"></a>
 ### Development
 
-
-
-<a name="video"></a>
-### Media
-
-
+As this is a backend project showing how to link database input information with a test of a front end image of a website. 
+This can be developed into a fully fuctioning website linking it with a fully interactive payment page and a gallery showing images of the products/categories selected
 
 <a name="Auth"></a>
 ### Authors
