@@ -102,6 +102,21 @@ There is a category selection where in hind-site should only be allowed to be up
 <a name="Deploy"></a>
 ### Deployment.
 
+env.py file.
+
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "any_secret_key")
+os.environ.setdefault("DEBUG", "True")
+os.environ.setdefault("DEVELOPMENT", "True")
+os.environ.setdefault("DB_URL", "postgresql:///hardware")
+
+
+
+This is saved as env.py as its blocked by Github so the page wont load unless this is added.
+
 
 To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
 
