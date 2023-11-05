@@ -6,13 +6,13 @@
 <div class="row">
     <div class="col s12 center-align">
         <a href="{{ url_for('add_item') }}" class="btn-large light-blue darken-2">
-            Add Task <i class="fas fa-plus-square right"></i>
+            Add Item <i class="fas fa-plus-square right"></i>
         </a>
     </div>
 </div>
 
 <ul class="collapsible">
-    {% for task in tasks|sort(attribute="due_date") %}
+    {% for item in items|sort(attribute="due_date") %}
     <li>
         <div class="collapsible-header black-text light-blue darken-4">
             <i class="fas fa-caret-down"></i>
