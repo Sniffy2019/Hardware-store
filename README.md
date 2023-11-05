@@ -144,6 +144,8 @@ To log into the Heroku toolbelt CLI:
 7. "exit()
 8. Select open app
 
+<img width="750" alt="main screenshot" src="https://live.staticflickr.com/65535/53310622191_667efca338_b.jpg">
+
 
 <a name="Local"></a>
 ### Local Deployment
