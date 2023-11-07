@@ -34,7 +34,7 @@
  * [W3 Nu HTML Validator](#w3-NU-HTML)
  * [Manual Testing](#Man-Test)
  * [Bugs](#Bugs)
- * [Development of website](#Development)
+ * [Development of website](#Future-Development)
    
 * ### [Credits](#Credits)
  
