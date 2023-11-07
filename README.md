@@ -145,7 +145,8 @@ To run a backend Python file, type `python3 run.py.
 A button should appear to click: _Open Preview_ or _Open Browser_.
 
 In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-To log into the Heroku toolbelt github deployment:
+
+To log into the Heroku toolbelt github deployment (did not use heroku Cli found going via github deployment option easier):
 
 1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
 2. click view app on aceros-guayana (if not showing then follow steps below).
