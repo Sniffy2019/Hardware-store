@@ -53,6 +53,7 @@
 
 The project Goal is to create a backend developed database for a hardware store selecting the products of hardware supplied coupled with an Items page to provide which items and which date they are required for.
 This would link into a website that woould show a gallery of photos for the products available and also a payment page that can be used once the customer is happy with there selection.
+
 The Table used is of two categories one Item where you can select your items with a description and time stamp of when you require them. Also an urgent and product selection is added to this table function.
 The other is products where a description of products is selected and you can edit or delete these products should you wish.
 If you look at table.py it depicts the hardware db.
