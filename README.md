@@ -118,7 +118,7 @@ os.environ.setdefault("IP", "0.0.0.0")
 os.environ.setdefault("PORT", "5000")
 <br>
 os.environ.setdefault("SECRET_KEY", "any_secret_key")
-<b>
+<br>
 os.environ.setdefault("DEBUG", "True")
 <br>
 os.environ.setdefault("DEVELOPMENT", "True")
