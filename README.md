@@ -50,7 +50,7 @@
 <a name="Pro"></a>
  * ### Project Goals
 
-The project Goal is to create a backend developed database for a hardware store selecting the categories of hardware supplied coupled with an Items page to provide which items and which date they are required for.
+The project Goal is to create a backend developed database for a hardware store selecting the products of hardware supplied coupled with an Items page to provide which items and which date they are required for.
 This would link into a website that woould show a gallery of photos for the products available and also a payment page that can be used once the customer is happy with there selection.
 
 
@@ -62,12 +62,14 @@ This would link into a website that woould show a gallery of photos for the prod
 
 <img width="750" alt="main screenshot" src="https://live.staticflickr.com/65535/53298173743_d249dcc7ed_z.jpg">
 
+
+
 <br><br>
 
 
 The "Home. page", is a basic site that allows the use to choose items to add or categories to choose from.
 The "add Items" page (as shown in the sceen shot above allows the use to select items fo purchasing.
-The "categories" page allows the customer to update and delete the categories as required.
+The "products" page allows the customer to update and delete the categories as required.
 
 
 <a name="User"></a>
@@ -97,7 +99,9 @@ The colours are based on the Venezuelan flag. The background drop is the factory
 
 The features are a home page showing the basic options, an Items selection page where the user can choose the items, then an item description allowing to put more information in. A due date for the items required. An urgent lever to select its an urgent purchase and a category selection to see if the product is available.
 
-There is a category selection where in hind-site should only be allowed to be updated by the vendor but, due to real life issues and getting the database and python to function it has been left to function as dual entity which I appreciate is not viable if it was the finished article. This allows the choice of hardware to be selected via the categories populated. if it was managed by staff they could delete a product if wasn't available or add once it became available.
+There is a product selection where in hind-site should only be allowed to be updated by the vendor but, due to real life issues and getting the database and python to function it has been left to function as dual entity which I appreciate is not viable if it was the finished article. This allows the choice of hardware to be selected via the products populated. if it was managed by staff they could delete a product if wasn't available or add once it became available.
+
+<img width="750" alt="main screenshot" src=https://live.staticflickr.com/65535/53316691019_32c54bf266_b.jpg">
 
 <a name="Deploy"></a>
 ### Deployment.
@@ -107,10 +111,15 @@ env.py file.
 import os
 
 os.environ.setdefault("IP", "0.0.0.0")
+<br>
 os.environ.setdefault("PORT", "5000")
+<br>
 os.environ.setdefault("SECRET_KEY", "any_secret_key")
+<b>
 os.environ.setdefault("DEBUG", "True")
+<br>
 os.environ.setdefault("DEVELOPMENT", "True")
+<br>
 os.environ.setdefault("DB_URL", "postgresql:///hardware")
 
 
@@ -128,21 +137,22 @@ To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with 
 
 `http_server`
 
-To run a backend Python file, type `python3 run.py`, if your Python file is named `run.py` of course.
+To run a backend Python file, type `python3 run.py.
 
 A button should appear to click: _Open Preview_ or _Open Browser_.
 
 In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-To log into the Heroku toolbelt CLI:
+To log into the Heroku toolbelt github deployment:
 
 1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Open up the more selection button.
-3. open run console
-4. Type Python3
-5. Then type "from hardware import db"
-6. "db.create_all()
-7. "exit()
-8. Select open app
+2. click view app on aceros-guayana (if not showing then follow steps below).
+3. Open up the more selection button.
+4. open run console
+5. Type Python3
+6. Then type "from hardware import db"
+7. "db.create_all()
+8. "exit()
+9. Select open app
 
 <img width="750" alt="main screenshot" src="https://live.staticflickr.com/65535/53310622191_667efca338_b.jpg">
 
