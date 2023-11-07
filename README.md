@@ -101,7 +101,7 @@ The features are a home page showing the basic options, an Items selection page 
 
 There is a product selection where in hind-site should only be allowed to be updated by the vendor but, due to real life issues and getting the database and python to function it has been left to function as dual entity which I appreciate is not viable if it was the finished article. This allows the choice of hardware to be selected via the products populated. if it was managed by staff they could delete a product if wasn't available or add once it became available.
 
-<img width="750" alt="main screenshot" src=https://live.staticflickr.com/65535/53316691019_32c54bf266_b.jpg">
+<img width="750" alt="main screenshot" src="https://live.staticflickr.com/65535/53316691019_32c54bf266_b.jpg">
 
 <a name="Deploy"></a>
 ### Deployment.
