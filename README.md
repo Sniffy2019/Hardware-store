@@ -35,7 +35,7 @@
  * [Manual Testing](#Man-Test)
  * [Bugs](#Bugs)
  * [Development of website](#Development)
- * [Future Development of website](#Fut-Dev)
+ * [Future Development of website](#Fut)
    
 * ### [Credits](#Credits)
  
