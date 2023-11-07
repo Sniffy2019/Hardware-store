@@ -279,7 +279,7 @@ Code Institute-initial-work Alex Parry
 <a name="Acknow"></a>
 ### Acknowledgments
 
-*Code Institute:- base layout of website and code to create the front page.
+*Code Institute:- base layout of website and code to create the pages.
 
 
 *Robert Mclaughlin:- For reviewing ideas.
