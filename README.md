@@ -75,7 +75,9 @@ The "products" page allows the customer to update and delete the categories as r
 <a name="User"></a>
 ### User Stories
 
-As this is a backend develope site with a font end display it is more to allow the custome a selection of projects that would be attached to a fully fuctional site to search and then purchase hardware from the supplier.
+As this is a backend developement site with a front end display it is more to allow the customer a selection of products that would be attached to a fully fuctional site to search and then purchase hardware from the supplier.
+The customer builds up their selection of products then selects the items with the date for the supplier to deliver them.
+The vendor can then add or delete the products if availabilty wasn't there but for it to function as a development project rather than functioning I've left the ability to edit and delete open for use.
 
 
 <a name="Des"></a>
@@ -87,6 +89,7 @@ The design is based on the 'code institute' task manager backend developement le
 ### Font styles used
 
 The font style is from materialize, this can be changed by adding "flow-text" to make it fit the sceen as suits.
+The use of black text is simply functional.
 
 
 <a name="Colour"></a>
@@ -124,7 +127,7 @@ os.environ.setdefault("DB_URL", "postgresql:///hardware")
 
 
 
-This is saved as env.py as its blocked by Github so the page wont load unless this is added.
+This is saved as env.py as its blocked by Github so the page wont load unless this is added if you load with gitpod, code anywhere its fine.
 
 
 To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
@@ -182,6 +185,8 @@ Code institute LMS
 * live.staticflickr.com
 * cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 * maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+* Materialize
+  
   
 
 <a name="Lang"></a>
@@ -201,9 +206,7 @@ Code institute LMS
 ### Automated Testing
 
 * Tests have been run on Code anywhere
-Using Html, CSS and Python
-
-
+Using Html, CSS and Python.
 
 * Glitch was used to format the code in Html  files.
 * Checked via glitch for presentation.
@@ -252,11 +255,15 @@ Also before I managed to get heroku to work; if you made a double/repeated input
 
 When using Gitpod It needs time from the initial load to some of the Flask applictions as mentioned before the psycopg2 module seems very temperamental.
 
+It does work in mobile screen format, but its a bit out of sync. 
+
 <a name="development"></a>
 ### Development
 
 As this is a backend project showing how to link database input information with a test of a front end image of a website. 
-This can be developed into a fully fuctioning website linking it with a fully interactive payment page and a gallery showing images of the products/categories selected.
+This can be developed into a fully fuctioning website linking it with a fully interactive payment page and a gallery showing images of the products/categories selected. The project is to show what a simple fuctioning database can do to aid a fucntioning web site or database led web page. With more refinement I can see how this would aid a fully fuctioning full stack web site. 
+
+
 
 <a name="Auth"></a>
 ### Authors
