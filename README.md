@@ -263,6 +263,7 @@ It does work in mobile screen format, but its a bit out of sync.
 
 As this is a backend project showing how to link database input information with a test of a front end image of a website. 
 This can be developed into a fully fuctioning website linking it with a fully interactive payment page and a gallery showing images of the products/categories selected. The project is to show what a simple fuctioning database can do to aid a fucntioning web site or database led web page. With more refinement I can see how this would aid a fully fuctioning full stack web site. 
+
 I would also have rather used photos of the different products than used a generic logo for the selections, but with time looming and not really wanting the base.html page to keep crashing I stuck with simplicity; for a future project it would look far more useful having visual aids for each selection.
 
 
